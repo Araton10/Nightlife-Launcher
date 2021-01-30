@@ -29,8 +29,8 @@ namespace FiveMServerLauncher
         public Form1()
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.BackColor = Color.Black;
-            this.TransparencyKey = Color.Black;
+            this.BackColor = Color.DarkRed;
+            this.TransparencyKey = Color.DarkRed;
             InitializeComponent();
             InitCustomLabelFont();
         }
@@ -53,7 +53,7 @@ namespace FiveMServerLauncher
             label1.Font = new Font(pfc.Families[0], label1.Font.Size);
             label2.Font = new Font(pfc.Families[0], label2.Font.Size);
             label3.Font = new Font(pfc.Families[0], label3.Font.Size);
-            label4.Font = new Font(pfc.Families[0], label4.Font.Size);
+            //label4.Font = new Font(pfc.Families[0], label4.Font.Size);
 
         }
 
@@ -107,7 +107,7 @@ namespace FiveMServerLauncher
                 label2.Text = "Offline";
                 label2.ForeColor = System.Drawing.Color.Red;
                 label3.Text = "Entra in Discord e in Teamspeak!";
-                label4.Visible = true;
+                //label4.Visible = true;
             }
 
         }
@@ -123,11 +123,22 @@ namespace FiveMServerLauncher
             label3.BackColor = Color.Transparent;
             label4.Parent = pictureBox1;
             label4.BackColor = Color.Transparent;
+            label5.Parent = pictureBox1;
+            label5.BackColor = Color.Transparent;
+            label6.Parent = pictureBox1;
+            label6.BackColor = Color.Transparent;
+            label7.Parent = pictureBox1;
+            label7.BackColor = Color.Transparent;
+            label8.Parent = pictureBox1;
+            label8.BackColor = Color.Transparent;
             pictureBox2.Parent = pictureBox1;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox3.Parent = pictureBox1;
             pictureBox3.BackColor = Color.Transparent;
-
+            pictureBox4.Parent = pictureBox1;
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox5.Parent = pictureBox1;
+            pictureBox5.BackColor = Color.Transparent;
 
             //---------------------------------------------------------------------------
             ServerUpdate();
@@ -167,16 +178,56 @@ namespace FiveMServerLauncher
 
         private void label4_MouseHover(object sender, EventArgs e)
         {
-            label4.ForeColor = Color.DimGray;
+            //label4.ForeColor = Color.DimGray;
             
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            label4.ForeColor = Color.White;
+            //label4.ForeColor = Color.White;
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        //private void label4_Click(object sender, EventArgs e)
+        //{
+        //    Process[] steam = Process.GetProcessesByName("steam");
+        //    if (steam.Length == 0)
+        //    {
+        //        MessageBox.Show("You must have your steam running.");
+        //        Close();
+        //    }
+        //    else
+        //    {
+
+        //        System.Diagnostics.Process process = new System.Diagnostics.Process();
+        //        System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+        //        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+        //        startInfo.FileName = "cmd.exe";
+        //        startInfo.Arguments = "/C Start fivem://connect/" + ipSRV;
+        //        process.StartInfo = startInfo;
+        //        process.Start();
+        //        Thread.Sleep(3000);
+        //        Close();
+
+
+        //    }
+        //}
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(DiscordLink);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("ts3server://"+ts3IP);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ServerUpdate();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             Process[] steam = Process.GetProcessesByName("steam");
             if (steam.Length == 0)
@@ -199,21 +250,6 @@ namespace FiveMServerLauncher
 
 
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(DiscordLink);
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("ts3server://"+ts3IP);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            ServerUpdate();
         }
     }
 }

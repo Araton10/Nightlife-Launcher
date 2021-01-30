@@ -143,6 +143,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_1.ico" />
+    <None Include="Resources\Senza titolo-1.png" />
+    <None Include="Resources\START.png" />
+    <None Include="Resources\sttaarrtt.png" />
+    <None Include="Resources\teams3.png" />
+    <None Include="Resources\discord.png" />
+    <None Include="Resources\louncher NL.png" />
+    <None Include="Resources\Regole.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
